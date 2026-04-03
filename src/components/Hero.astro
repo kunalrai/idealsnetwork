@@ -18,7 +18,11 @@ const slides = [
 ];
 ---
 
-<section aria-label="Hero" class="carousel-container" style="margin-top:0;">
+<section
+  aria-label="Hero"
+  class="carousel-container"
+  style="position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden;margin-top:0;"
+>
   {slides.map((slide, i) => (
     <div class={`carousel-slide${i === 0 ? ' active' : ''}`} id={`slide-${i}`}>
       <img
