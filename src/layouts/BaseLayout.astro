@@ -141,7 +141,24 @@ const allSchemas = [orgSchema, ...jsonLd];
     <script>
       const hamburger = document.getElementById('hamburger');
       const navLinksWrap = document.getElementById('nav-links-wrap');
-      hamburger?.addEventListener('click', () => navLinksWrap?.classList.toggle('open'));
+      const navOverlay = document.getElementById('nav-overlay');
+      
+      function toggleMenu() {
+        const isOpen = navLinksWrap?.classList.toggle('open');
+        hamburger?.classList.toggle('active', isOpen);
+        hamburger?.setAttribute('aria-expanded', isOpen.toString());
+        navOverlay?.classList.toggle('active', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+      
+      hamburger?.addEventListener('click', toggleMenu);
+      navOverlay?.addEventListener('click', toggleMenu);
+      
+      navLinksWrap?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggleMenu();
+        });
+      });
     </script>
   </body>
 </html>
