@@ -39,7 +39,7 @@ const contactSchema = {
   jsonLd={[contactSchema]}
 >
   <!-- Hero -->
-  <div style="background: var(--navy); padding: 10rem clamp(1.5rem, 6vw, 6rem) 5rem; position: relative; overflow: hidden;">
+  <div style="background: var(--navy); padding: 8rem clamp(1rem, 4vw, 2rem) 4rem; position: relative; overflow: hidden;">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);pointer-events:none;"></div>
     <div style="max-width: 640px; position: relative; z-index: 1;">
       <span class="section-label">Get In Touch</span>
@@ -59,8 +59,8 @@ const contactSchema = {
   </section>
 
   <!-- Contact cards + details -->
-  <section style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--cream);">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start;">
+  <section style="padding: 5rem clamp(1rem, 4vw, 2rem); background: var(--cream); position: relative; z-index: 1;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 2rem; align-items: start;">
 
       <!-- Contact info -->
       <div>
@@ -166,8 +166,12 @@ const contactSchema = {
 </BaseLayout>
 
 <style>
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     section > div[style*="grid-template-columns: 1fr 1.6fr"] { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  }
+  
+  @media (max-width: 600px) {
+    section > div[style*="grid-template-columns: 1fr 1.6fr"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
     div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
   }
 </style>
