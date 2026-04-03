@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "I-Deals Network",
+  "url": "https://www.idealsnetwork.com",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-9953285105",
+      "contactType": "customer service",
+      "email": "register@idealsnetwork.com",
+      "areaServed": "Worldwide",
+      "availableLanguage": "English"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-9650920078",
+      "contactType": "WhatsApp",
+      "areaServed": "Worldwide"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "B-756, Bunkar Colony, Ashok Vihar Phase-IV",
+    "addressLocality": "Delhi",
+    "postalCode": "110052",
+    "addressCountry": "IN"
+  }
+};
+---
+
+<BaseLayout
+  title="Contact I-Deals Network | Register, Speak, Partner or Request Training"
+  description="Reach I-Deals Network in Delhi, India. Email register@idealsnetwork.com or WhatsApp +919650920078 for events, speaker slots, or partnerships."
+  canonical="https://www.idealsnetwork.com/contact"
+  jsonLd={[contactSchema]}
+>
+  <!-- Hero -->
+  <div style="background: var(--navy); padding: 10rem clamp(1.5rem, 6vw, 6rem) 5rem; position: relative; overflow: hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);pointer-events:none;"></div>
+    <div style="max-width: 640px; position: relative; z-index: 1;">
+      <span class="section-label">Get In Touch</span>
+      <span class="gold-rule" style="display: block; margin-top: 0.75rem;"></span>
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: #fff; margin-bottom: 1.25rem; line-height: 1.1;">
+        Contact Us
+      </h1>
+      <p style="color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.8;">
+        Reach out to register for events, enquire about speaking opportunities, explore partnerships, or request a customised training programme.
+      </p>
+    </div>
+  </div>
+
+  <!-- Page summary -->
+  <section class="page-summary" aria-label="Page overview" style="margin: 0; max-width: 1200px; margin-inline: auto;">
+    Contact I-Deals Network to register for upcoming finance workshops and events, apply to speak at a summit, explore sponsorship or partnership opportunities, or commission a customised training programme for your organisation. We are based in Delhi, India, and run events globally across Singapore, Hong Kong, Mumbai, Bengaluru, and other major cities. Email us at register@idealsnetwork.com, call +91-9953285105, or reach us instantly via WhatsApp at +91-96509 20078. Follow us on LinkedIn, Facebook, YouTube, Twitter, and Instagram for event announcements and financial insights.
+  </section>
+
+  <!-- Contact cards + details -->
+  <section style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--cream);">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start;">
+
+      <!-- Contact info -->
+      <div>
+        <div class="reveal">
+          <span class="section-label">Direct Contact</span>
+          <span class="gold-rule" style="display: block; margin-top: 0.75rem;"></span>
+          <h2 class="section-title" style="margin-bottom: 2rem;">Reach Us</h2>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          {[
+            {
+              label: 'Phone',
+              value: '+91 9953285105',
+              href: 'tel:+919953285105',
+              icon: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>`,
+            },
+            {
+              label: 'Email',
+              value: 'register@idealsnetwork.com',
+              href: 'mailto:register@idealsnetwork.com',
+              icon: `<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>`,
+            },
+            {
+              label: 'WhatsApp',
+              value: '+91 96509 20078',
+              href: 'https://wa.me/+919650920078',
+              icon: `<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>`,
+            },
+          ].map((item, i) => (
+            <div class={`reveal reveal-delay-${i + 1}`} style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="width: 42px; height: 42px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" set:html={item.icon}></svg>
+              </div>
+              <div>
+                <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.25rem;">{item.label}</div>
+                <a href={item.href} style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--navy); text-decoration: none; font-weight: 500;">{item.value}</a>
+              </div>
+            </div>
+          ))}
+
+          <!-- Address -->
+          <div class="reveal reveal-delay-4" style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 42px; height: 42px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.25rem;">Office</div>
+              <address style="font-style: normal; font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;">
+                B-756, Bunkar Colony<br />
+                Ashok Vihar Phase-IV<br />
+                Delhi — 110052, India
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enquiry options -->
+      <div>
+        <div class="reveal">
+          <span class="section-label">How Can We Help</span>
+          <span class="gold-rule" style="display: block; margin-top: 0.75rem;"></span>
+          <h2 class="section-title" style="margin-bottom: 2rem;">Enquiry Options</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          {[
+            { id: 'speaker', title: 'Join as Speaker', desc: 'Share your expertise with our global community of finance professionals.' },
+            { id: 'course', title: 'Request a Course', desc: 'Tell us what topic you want covered and we\'ll work with experts to build it.' },
+            { id: 'training', title: 'Customised Training', desc: 'In-house training programmes tailored to your team\'s needs and schedule.' },
+            { id: 'partner', title: 'Partner / Sponsor', desc: 'Increase your brand\'s visibility with our network of finance professionals.' },
+            { id: 'register', title: 'Register for Events', desc: 'Sign up to attend any of our upcoming hybrid workshops and summits.' },
+            { id: 'alerts', title: 'Signup for Alerts', desc: 'Get notified about new events, speakers, and early-bird registrations.' },
+          ].map((item, i) => (
+            <a
+              href={`mailto:register@idealsnetwork.com?subject=${encodeURIComponent(item.title + ' - Enquiry')}`}
+              id={item.id}
+              class={`card reveal reveal-delay-${Math.min((i % 3) + 1, 3)}`}
+              style="text-decoration: none; display: block;"
+              aria-label={item.title}
+            >
+              <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem;">{item.title}</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; margin: 0;">{item.desc}</p>
+            </a>
+          ))}
+        </div>
+
+        <div class="reveal" style="margin-top: 1.5rem; padding: 1.5rem; background: var(--navy); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+          <div>
+            <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;">General Enquiries</div>
+            <p style="color: rgba(255,255,255,0.75); font-size: 0.88rem; margin: 0;">Email us at register@idealsnetwork.com and we'll get back to you within 24 hours.</p>
+          </div>
+          <a href="mailto:register@idealsnetwork.com" class="btn-gold" style="white-space: nowrap;">Send Email</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  @media (max-width: 768px) {
+    section > div[style*="grid-template-columns: 1fr 1.6fr"] { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+    div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

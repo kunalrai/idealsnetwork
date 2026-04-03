@@ -1,0 +1,39 @@
+---
+import { popularEvents } from '../data/events';
+---
+
+<section
+  aria-labelledby="popular-heading"
+  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--white);"
+>
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+
+    <div class="reveal">
+      <span class="section-label">Most Attended</span>
+      <span class="gold-rule" style="display:block; margin-top: 0.75rem;"></span>
+      <h2 id="popular-heading" class="section-title" style="margin-bottom: 1.25rem;">Popular Events</h2>
+      <p style="color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; max-width: 380px;">
+        Explore our most impactful programmes — attended by thousands of professionals in finance, investment, and M&A across the globe.
+      </p>
+    </div>
+
+    <nav aria-label="Popular events list">
+      {popularEvents.map((ev, i) => (
+        <a
+          href={ev.url}
+          class={`popular-link reveal reveal-delay-${Math.min(i + 1, 4)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {ev.title}
+        </a>
+      ))}
+    </nav>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    section > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+const stats = [
+  { number: '8,000+', label: 'Participants' },
+  { number: '90+',    label: 'Events Conducted' },
+  { number: '500+',   label: 'Expert Speakers' },
+  { number: '70+',    label: 'Countries Reached' },
+];
+---
+
+<section
+  aria-label="Platform statistics"
+  style="background: var(--navy); padding: 3rem clamp(1.5rem, 6vw, 6rem);"
+>
+  <ul
+    style="
+      list-style: none;
+      margin: 0; padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    "
+    role="list"
+  >
+    {stats.map((stat, i) => (
+      <li class={`reveal reveal-delay-${i + 1}`}>
+        <div class="stat-number">{stat.number}</div>
+        <div class="stat-label">{stat.label}</div>
+      </li>
+    ))}
+  </ul>
+</section>

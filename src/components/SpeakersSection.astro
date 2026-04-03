@@ -1,0 +1,48 @@
+---
+import { speakers } from '../data/speakers';
+---
+
+<section
+  aria-labelledby="speakers-heading"
+  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--cream);"
+>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="reveal" style="margin-bottom: 3rem; text-align: center;">
+      <span class="section-label">Voices of Authority</span>
+      <span class="gold-rule-center" style="display:block; margin-top: 0.75rem;"></span>
+      <h2 id="speakers-heading" class="section-title">Our Speakers</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.75rem; max-width: 520px; margin-inline: auto; line-height: 1.7;">
+        Industry leaders from the world's top financial institutions, law firms, and investment houses.
+      </p>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 0;
+        border: 1px solid var(--cream-dark);
+        background: var(--white);
+      "
+    >
+      {speakers.map((speaker, i) => (
+        <div
+          class={`speaker-card reveal reveal-delay-${Math.min((i % 4) + 1, 4)}`}
+        >
+          <div class="speaker-name">{speaker.name}</div>
+          <div class="speaker-role">{speaker.role}</div>
+          <div
+            style="
+              font-size: 0.72rem;
+              color: var(--gold-dark);
+              font-weight: 600;
+              letter-spacing: 0.06em;
+              text-transform: uppercase;
+              margin-top: 0.25rem;
+            "
+          >{speaker.org}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

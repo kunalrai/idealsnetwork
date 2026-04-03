@@ -1,0 +1,53 @@
+---
+import { upcomingEvents } from '../data/events';
+---
+
+<section
+  id="upcoming-events"
+  aria-labelledby="upcoming-heading"
+  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--cream);"
+>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="reveal" style="margin-bottom: 3rem;">
+      <span class="section-label">Don't Miss</span>
+      <span class="gold-rule" style="display:block; margin-top: 0.75rem;"></span>
+      <h2 id="upcoming-heading" class="section-title">Upcoming Events</h2>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      "
+    >
+      {upcomingEvents.map((event, i) => (
+        <article
+          class={`event-card reveal reveal-delay-${i + 1}`}
+          aria-label={event.title}
+        >
+          <div class="event-date">{event.date}</div>
+          <h3 class="event-title">{event.title}</h3>
+          <div class="event-meta">
+            <span class="event-tag">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline;vertical-align:middle;margin-right:3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {event.location}
+            </span>
+            <span class="event-tag">{event.type}</span>
+            <span class="event-tag">{event.mode}</span>
+          </div>
+          <a
+            href={event.url}
+            class="btn-gold"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="align-self: flex-start; margin-top: 0.5rem;"
+          >
+            Enquire Now
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

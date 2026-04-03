@@ -1,0 +1,116 @@
+---
+const slides = [
+  {
+    src: 'https://www.idealsnetwork.com/uploads/images/img/1673522455.png',
+    headline: 'Where Finance\nMeets Opportunity',
+    sub: 'Global workshops, summits, and masterclasses for investment professionals.',
+  },
+  {
+    src: 'https://www.idealsnetwork.com/uploads/images/img/1678874916.jpg',
+    headline: 'World-Class\nSpeakers & Experts',
+    sub: '500+ industry leaders sharing insights across valuation, M&A, and private equity.',
+  },
+  {
+    src: 'https://www.idealsnetwork.com/uploads/images/img/1687820845.png',
+    headline: '70+ Countries.\nOne Network.',
+    sub: 'Join 8,000+ participants from across the globe at in-person and hybrid events.',
+  },
+];
+---
+
+<section aria-label="Hero" class="carousel-container" style="margin-top:0;">
+  {slides.map((slide, i) => (
+    <div class={`carousel-slide${i === 0 ? ' active' : ''}`} id={`slide-${i}`}>
+      <img
+        src={slide.src}
+        alt={slide.headline.replace('\n', ' ')}
+        loading={i === 0 ? 'eager' : 'lazy'}
+        width="1920"
+        height="1080"
+      />
+      <div class="carousel-overlay" aria-hidden="true"></div>
+    </div>
+  ))}
+
+  <!-- Content overlay — always visible, changes per slide -->
+  <div class="carousel-content" aria-live="polite">
+    <div style="max-width:640px;">
+      <span class="section-label" id="hero-label">Events &amp; Workshops</span>
+      <h1
+        id="hero-headline"
+        style="
+          font-size: clamp(2.8rem, 6vw, 5rem);
+          font-weight: 700;
+          color: #fff;
+          margin: 0.75rem 0 1.25rem;
+          line-height: 1.08;
+          white-space: pre-line;
+          text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        "
+      >
+        {slides[0].headline}
+      </h1>
+      <p
+        id="hero-sub"
+        style="
+          font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+          color: rgba(255,255,255,0.82);
+          line-height: 1.7;
+          max-width: 480px;
+          margin-bottom: 2rem;
+        "
+      >
+        {slides[0].sub}
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#upcoming-events" class="btn-gold">Upcoming Events</a>
+        <a href="https://www.idealsnetwork.com/register" class="btn-outline-gold">Register Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="carousel-dots" role="tablist" aria-label="Carousel navigation">
+    {slides.map((_, i) => (
+      <button
+        class={`carousel-dot${i === 0 ? ' active' : ''}`}
+        data-index={i}
+        role="tab"
+        aria-selected={i === 0}
+        aria-label={`Slide ${i + 1}`}
+      ></button>
+    ))}
+  </div>
+</section>
+
+<script define:vars={{ slides }}>
+  let current = 0;
+  let timer;
+  const slideEls = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const headline = document.getElementById('hero-headline');
+  const sub = document.getElementById('hero-sub');
+
+  function goTo(index) {
+    slideEls[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    dots[current].setAttribute('aria-selected', 'false');
+    current = index;
+    slideEls[current].classList.add('active');
+    dots[current].classList.add('active');
+    dots[current].setAttribute('aria-selected', 'true');
+    if (headline) headline.textContent = slides[current].headline;
+    if (sub) sub.textContent = slides[current].sub;
+  }
+
+  function next() { goTo((current + 1) % slides.length); }
+
+  function start() { timer = setInterval(next, 5000); }
+  function stop() { clearInterval(timer); }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { stop(); goTo(Number(dot.dataset.index)); start(); });
+  });
+
+  start();
+</script>

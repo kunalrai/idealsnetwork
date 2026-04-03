@@ -1,0 +1,48 @@
+---
+import { pastEventCities } from '../data/events';
+---
+
+<section
+  aria-labelledby="past-events-heading"
+  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--cream);"
+>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="reveal" style="margin-bottom: 3rem; text-align: center;">
+      <span class="section-label">Global Footprint</span>
+      <span class="gold-rule-center" style="display: block; margin-top: 0.75rem;"></span>
+      <h2 id="past-events-heading" class="section-title">Past Events by City</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.75rem; max-width: 480px; margin-inline: auto; line-height: 1.7;">
+        From Mumbai to Singapore, our events have brought together finance professionals across Asia and beyond.
+      </p>
+    </div>
+
+    <nav
+      aria-label="Past events by city"
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 0.75rem;
+      "
+    >
+      {pastEventCities.map((city, i) => (
+        <a
+          href={city.url}
+          class={`city-card reveal reveal-delay-${Math.min((i % 4) + 1, 4)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${city.city} events`}
+          style={`background: ${city.bg};`}
+        >
+          <div class="city-card-inner">
+            <div>
+              <div class="city-name">
+                {city.city}
+                <span class="city-arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </nav>
+  </div>
+</section>

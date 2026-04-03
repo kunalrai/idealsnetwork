@@ -1,0 +1,66 @@
+---
+const cards = [
+  {
+    title: 'What We Do',
+    body: 'Our platform connects all stakeholders in the business fraternity — entrepreneurs, investors, bankers, dealmakers, analysts, mentors, and advisers across the globe through industry-leading events and summits.',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>`,
+  },
+  {
+    title: 'Mission',
+    body: 'We aim to be a nesting ground for entrepreneurs and a networking platform for fledgling ventures to scale up — imparting knowledge and offering analysis through training, education, assessment, and evaluation.',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+  },
+  {
+    title: 'Vision',
+    body: 'I-Deals Network envisions being the preferred platform that connects investment, banking, and law firms with financial and corporate entities globally — fostering meaningful professional relationships.',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  },
+  {
+    title: 'Our Team',
+    body: 'Dedicated to building matchless services across all incorporated divisions of our business. We team up with problem solvers, excellent speakers, writers, trainers, and creative thinkers worldwide.',
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  },
+];
+---
+
+<section
+  id="about"
+  aria-labelledby="about-heading"
+  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--white);"
+>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="reveal" style="margin-bottom: 3rem;">
+      <span class="section-label">Who We Are</span>
+      <span class="gold-rule" style="display:block; margin-top: 0.75rem;"></span>
+      <h2 id="about-heading" class="section-title">About I-Deals Network</h2>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.25rem;
+      "
+    >
+      {cards.map((card, i) => (
+        <div class={`about-card reveal reveal-delay-${i + 1}`}>
+          <div class="about-card-icon" set:html={card.icon}></div>
+          <h3
+            style="
+              font-family: 'Cormorant Garamond', serif;
+              font-size: 1.35rem;
+              font-weight: 600;
+              color: var(--navy);
+              margin-bottom: 0.75rem;
+            "
+          >{card.title}</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.8;">{card.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="reveal" style="text-align: center; margin-top: 3rem;">
+      <a href="/about-us" class="btn-navy">Learn More About Us</a>
+    </div>
+  </div>
+</section>

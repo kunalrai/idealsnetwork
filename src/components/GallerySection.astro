@@ -1,0 +1,40 @@
+---
+const images = Array.from({ length: 16 }, (_, i) => ({
+  src: `https://www.idealsnetwork.com/img/banner/${i + 1}.jpg`,
+  alt: `I-Deals Network event gallery image ${i + 1}`,
+}));
+---
+
+<section
+  aria-labelledby="gallery-heading"
+  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--navy);"
+>
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="reveal" style="margin-bottom: 3rem; text-align: center;">
+      <span class="section-label" style="color: var(--gold);">Moments That Matter</span>
+      <span class="gold-rule-center" style="display: block; margin-top: 0.75rem;"></span>
+      <h2
+        id="gallery-heading"
+        style="
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(2rem, 4vw, 3rem);
+          font-weight: 600;
+          color: #fff;
+        "
+      >Event Gallery</h2>
+    </div>
+
+    <div class="gallery-grid reveal">
+      {images.map((img) => (
+        <img
+          src={img.src}
+          alt={img.alt}
+          loading="lazy"
+          width="400"
+          height="300"
+          decoding="async"
+        />
+      ))}
+    </div>
+  </div>
+</section>

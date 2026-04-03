@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import StatsStrip from '../components/StatsStrip.astro';
+import UpcomingEvents from '../components/UpcomingEvents.astro';
+import PopularEvents from '../components/PopularEvents.astro';
+import DamodaranSection from '../components/DamodaranSection.astro';
+import SpeakersSection from '../components/SpeakersSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import PastEvents from '../components/PastEvents.astro';
+import GallerySection from '../components/GallerySection.astro';
+import { upcomingEvents } from '../data/events';
+import { speakers } from '../data/speakers';
+
+// JSON-LD: Events
+const eventSchemas = upcomingEvents.map(event => ({
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": event.title,
+  "startDate": event.startDate,
+  "endDate": event.endDate,
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": event.location,
+    "address": { "@type": "PostalAddress", "addressLocality": event.location }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "I-Deals Network",
+    "url": "https://www.idealsnetwork.com"
+  },
+  "url": event.url,
+}));
+
+// JSON-LD: Persons (speakers)
+const personSchemas = speakers.map(s => ({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": s.name,
+  "jobTitle": s.role,
+  "worksFor": { "@type": "Organization", "name": s.org },
+}));
+---
+
+<BaseLayout
+  title="I-Deals Network | Finance Events, Valuation & M&A Workshops Globally"
+  description="I-Deals Network connects 8000+ professionals across 70+ countries through expert-led finance events, M&A workshops, and valuation masterclasses."
+  jsonLd={[...eventSchemas, ...personSchemas]}
+>
+  <!-- Page summary for SEO/LLM -->
+  <section class="page-summary" aria-label="Page overview" style="display:none;" id="page-overview">
+    I-Deals Network is a global platform hosting finance and investment events, connecting over 8,000 professionals across 70+ countries. We organise expert-led workshops on business valuation, M&A deal structuring, private equity fundraising, and due diligence. Our faculty includes 500+ speakers from institutions such as Duff &amp; Phelps, Kroll, PwC, Harvard Law School, and IVSC. We run hybrid events in cities including Singapore, Delhi, Mumbai, Hong Kong, and Kuala Lumpur. Our flagship programme features world-renowned Professor Aswath Damodaran. Whether you are an entrepreneur, investor, dealmaker, or analyst, I-Deals Network provides the knowledge and connections to accelerate your career and close better deals.
+  </section>
+
+  <Hero />
+  <StatsStrip />
+  <UpcomingEvents />
+  <PopularEvents />
+  <DamodaranSection />
+  <SpeakersSection />
+  <AboutSection />
+  <PastEvents />
+  <GallerySection />
+</BaseLayout>
