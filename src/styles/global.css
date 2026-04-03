@@ -461,6 +461,25 @@ nav.scrolled {
 }
 
 /* ── Past events city grid ── */
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .city-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .city-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.35rem;
+  }
+}
+
 .city-card {
   position: relative;
   overflow: hidden;
@@ -484,6 +503,15 @@ nav.scrolled {
   font-size: 1.35rem;
   font-weight: 600;
   color: var(--white);
+}
+
+@media (max-width: 480px) {
+  .city-name {
+    font-size: 1rem;
+  }
+  .city-card-inner {
+    padding: 0.5rem 0.75rem;
+  }
 }
 .city-arrow {
   display: inline-block;
