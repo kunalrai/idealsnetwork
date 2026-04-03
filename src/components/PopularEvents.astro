@@ -4,7 +4,7 @@ import { popularEvents } from '../data/events';
 
 <section
   aria-labelledby="popular-heading"
-  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--white);"
+  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--white); position: relative; z-index: 1;"
 >
   <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
 
@@ -17,7 +17,7 @@ import { popularEvents } from '../data/events';
       </p>
     </div>
 
-    <nav aria-label="Popular events list">
+    <div role="navigation" aria-label="Popular events list">
       {popularEvents.map((ev, i) => (
         <a
           href={ev.url}
@@ -28,7 +28,7 @@ import { popularEvents } from '../data/events';
           {ev.title}
         </a>
       ))}
-    </nav>
+    </div>
   </div>
 </section>
 

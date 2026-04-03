@@ -4,7 +4,7 @@ import { speakers } from '../data/speakers';
 
 <section
   aria-labelledby="speakers-heading"
-  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--cream);"
+  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--cream); position: relative; z-index: 1;"
 >
   <div style="max-width: 1200px; margin: 0 auto;">
     <div class="reveal" style="margin-bottom: 3rem; text-align: center;">
@@ -21,7 +21,6 @@ import { speakers } from '../data/speakers';
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         gap: 0;
-        border: 1px solid var(--cream-dark);
         background: var(--white);
       "
     >

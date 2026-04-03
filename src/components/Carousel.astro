@@ -1,0 +1,144 @@
+---
+interface Props {
+  title: string;
+  items: { name: string; logo: string; url: string }[];
+  bgLight?: boolean;
+}
+
+const { title, items, bgLight = false } = Astro.props;
+---
+
+<section 
+  class="carousel-section" 
+  style={`
+    background: ${bgLight ? 'var(--cream)' : 'var(--navy)'};
+    padding: 0.75rem 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  `}
+>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem);">
+    <h3 
+      style={`
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: ${bgLight ? 'var(--navy)' : 'white'};
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      `}
+    >
+      {title}
+    </h3>
+    
+    <div class="carousel-container">
+      <div class="carousel-track" id={`${title.toLowerCase().replace(/\s+/g, '-')}-track`}>
+        {[...items, ...items].map((item, i) => (
+          <a 
+            href={item.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="carousel-item"
+            style={`
+              background: ${bgLight ? 'white' : 'rgba(255,255,255,0.08)'};
+              border: 1px solid ${bgLight ? 'var(--border)' : 'rgba(255,255,255,0.1)'};
+            `}
+          >
+            <span style={`color: ${bgLight ? 'var(--navy)' : 'white'};`}>{item.name}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .carousel-section {
+    position: relative;
+  }
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1rem;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+  }
+
+  .carousel-track:hover {
+    animation-play-state: paused;
+  }
+
+  .carousel-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 32px;
+    border-radius: 4px;
+    padding: 0 0.75rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .carousel-item span {
+    font-weight: 600;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item {
+      width: 90px;
+      height: 28px;
+    }
+
+    .carousel-item span {
+      font-size: 0.65rem;
+    }
+  }
+
+  .carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .carousel-item span {
+    font-weight: 600;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item {
+      min-width: 100px;
+      height: 36px;
+    }
+
+    .carousel-item span {
+      font-size: 0.7rem;
+    }
+  }
+</style>

@@ -59,13 +59,13 @@ export const popularEvents: { title: string; url: string }[] = [
 ];
 
 export const pastEventCities: { city: string; url: string; bg: string }[] = [
-  { city: 'Mumbai', url: 'https://idealsnetwork.com/mumbai', bg: '#1a2f4a' },
-  { city: 'Bengaluru', url: 'https://idealsnetwork.com/bengaluru', bg: '#152844' },
-  { city: 'Hong Kong', url: 'https://idealsnetwork.com/hongkong', bg: '#1E3A5F' },
-  { city: 'Jakarta', url: 'https://idealsnetwork.com/jakarta-new', bg: '#0f2238' },
-  { city: 'Kuala Lumpur', url: 'https://idealsnetwork.com/kuala-lumpur', bg: '#162b44' },
-  { city: 'Bangkok', url: 'https://idealsnetwork.com/bangkok', bg: '#1a3050' },
-  { city: 'Delhi', url: 'https://idealsnetwork.com/delhi', bg: '#112035' },
-  { city: 'Singapore', url: 'https://idealsnetwork.com/singapore-page', bg: '#0d2040' },
-  { city: 'Online', url: 'https://idealsnetwork.com/online-events', bg: '#0C1B33' },
+  { city: 'Mumbai', url: 'https://idealsnetwork.com/mumbai', bg: 'url(https://www.idealsnetwork.com/uploads/images/img/1655898624.jpg)' },
+  { city: 'Bengaluru', url: 'https://idealsnetwork.com/bengaluru', bg: 'url(https://www.idealsnetwork.com/uploads/images/img/1655898716.jpg)' },
+  { city: 'Hong Kong', url: 'https://idealsnetwork.com/hongkong', bg: 'url(https://www.idealsnetwork.com/uploads/images/img/1655898795.jpg)' },
+  { city: 'Jakarta', url: 'https://idealsnetwork.com/jakarta-new', bg: 'url(https://www.idealsnetwork.com/uploads/images/img/1712395900.jpg)' },
+  { city: 'Kuala Lumpur', url: 'https://idealsnetwork.com/kuala-lumpur', bg: 'url(https://www.idealsnetwork.com/uploads/images/img/1655898850.jpg)' },
+  { city: 'Bangkok', url: 'https://idealsnetwork.com/bangkok', bg: 'url(https://www.idealsnetwork.com/uploads/images/img/1655899848.jpg)' },
+  { city: 'Delhi', url: 'https://idealsnetwork.com/delhi', bg: 'url(https://www.idealsnetwork.com/uploads/images/img/1655898624.jpg)' },
+  { city: 'Singapore', url: 'https://idealsnetwork.com/singapore-page', bg: 'url(https://www.idealsnetwork.com/uploads/images/img/1655898624.jpg)' },
+  { city: 'Online', url: 'https://idealsnetwork.com/online-events', bg: 'url(https://www.idealsnetwork.com/uploads/images/img/1655898624.jpg)' },
 ];

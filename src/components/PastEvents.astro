@@ -4,7 +4,7 @@ import { pastEventCities } from '../data/events';
 
 <section
   aria-labelledby="past-events-heading"
-  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--cream);"
+  style="padding: 5rem clamp(1.5rem, 6vw, 6rem); background: var(--cream); position: relative; z-index: 1;"
 >
   <div style="max-width: 1200px; margin: 0 auto;">
     <div class="reveal" style="margin-bottom: 3rem; text-align: center;">
@@ -16,7 +16,8 @@ import { pastEventCities } from '../data/events';
       </p>
     </div>
 
-    <nav
+    <div
+      role="navigation"
       aria-label="Past events by city"
       style="
         display: grid;
@@ -27,11 +28,11 @@ import { pastEventCities } from '../data/events';
       {pastEventCities.map((city, i) => (
         <a
           href={city.url}
-          class={`city-card reveal reveal-delay-${Math.min((i % 4) + 1, 4)}`}
+          class="city-card"
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${city.city} events`}
-          style={`background: ${city.bg};`}
+          style={`background: linear-gradient(rgba(15, 30, 50, 0.45), rgba(15, 30, 50, 0.45)), ${city.bg}; background-size: cover; background-position: center;`}
         >
           <div class="city-card-inner">
             <div>
@@ -43,6 +44,6 @@ import { pastEventCities } from '../data/events';
           </div>
         </a>
       ))}
-    </nav>
+    </div>
   </div>
 </section>
