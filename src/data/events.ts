@@ -55,7 +55,7 @@ export const popularEvents: { title: string; url: string }[] = [
   { title: 'South East Asia Business Summit 2018', url: 'https://www.idealsnetwork.com/south-east-asia-business-summit-2018' },
   { title: 'Investment Deal Summit', url: 'https://www.idealsnetwork.com/investment-deal-summit' },
   { title: 'Business Valuation Summit', url: 'https://www.idealsnetwork.com/business-valuation-summit' },
-  { title: 'Business Valuation Masterclass', url: 'https://www.idealsnetwork.com/business-valuation-masterclass' },
+  { title: 'Business Valuation Masterclass', url: '/business-valuation-masterclass' },
 ];
 
 export const pastEventCities: { city: string; url: string; bg: string }[] = [

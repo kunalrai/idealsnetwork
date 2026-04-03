@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Business Valuation with Aswath Damodaran | I-Deals Network"
+  description="Join our Business Valuation workshops and masterclasses led by Professor Aswath Damodaran. Events held in Dubai, Singapore, California, Greece, and more."
+  canonical="https://www.idealsnetwork.com/business-valuation-with-aswath-damodaran"
+>
+  <!-- Hero -->
+  <div
+    style="
+      background: var(--navy);
+      padding: 8rem clamp(1rem, 4vw, 2rem) 4rem;
+      position: relative;
+      overflow: hidden;
+    "
+  >
+    <div
+      style="
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+        pointer-events: none;
+      "
+    ></div>
+    <div style="max-width: 720px; position: relative; z-index: 1;">
+      <span class="section-label">Past Events</span>
+      <span class="gold-rule" style="display: block; margin-top: 0.75rem;"></span>
+      <h1
+        style="
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(2rem, 5vw, 3.5rem);
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 1.5rem;
+          line-height: 1.1;
+        "
+      >Business Valuation with Aswath Damodaran</h1>
+      <p style="color: rgba(255,255,255,0.75); font-size: 1.05rem; line-height: 1.8; max-width: 600px;">
+        World-class business valuation workshops led by Professor Aswath Damodaran, one of the most respected voices in corporate finance and valuation.
+      </p>
+    </div>
+  </div>
+
+  <!-- Events Grid -->
+  <section style="padding: 4rem clamp(1rem, 4vw, 3rem); background: var(--cream);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem;">
+        {[
+          {
+            date: 'December 1-2, 2024',
+            title: 'Business Valuation with Aswath Damodaran',
+            location: 'Dubai',
+            type: 'Workshop',
+            mode: 'Offline',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1727814376.png',
+            link: 'https://idealsnetwork.com/business-valuation-with-aswath-damodaran-dec-dubai',
+          },
+          {
+            date: 'March 14-15, 2025',
+            title: 'Business Valuation Masterclass',
+            location: 'Athens',
+            type: 'Workshop',
+            mode: 'Hybrid',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1734695256.png',
+            link: 'https://idealsnetwork.com/business-valuation-with-aswath-damodaran-mar-greece',
+          },
+          {
+            date: 'December 4-5, 2024',
+            title: 'Business Valuation With Aswath Damodaran',
+            location: 'Singapore',
+            type: 'Workshop',
+            mode: 'Hybrid',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1723792251.png',
+            link: 'https://www.idealsnetwork.com/business-valuation-with-aswath-damodarannov-2024',
+          },
+          {
+            date: 'September 24-27, 2024',
+            title: 'Business Valuation With Aswath Damodaran',
+            location: 'California',
+            type: 'Workshop',
+            mode: 'Online',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1716465481.png',
+            link: 'https://www.idealsnetwork.com/business-valuation-with-aswath-damodaran-august-2024',
+          },
+          {
+            date: 'November 14-16, 2023',
+            title: 'Business Valuation With Aswath Damodaran',
+            location: 'California',
+            type: 'Workshop',
+            mode: 'Online',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1698734644.png',
+            link: 'https://www.idealsnetwork.com/business-valuation-with-aswath-damodaran-nov2023',
+          },
+          {
+            date: 'December 7-8, 2023',
+            title: 'Business Valuation with Aswath Damodaran',
+            location: 'Singapore',
+            type: 'Workshop',
+            mode: 'Offline',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1700476717.png',
+            link: 'https://idealsnetwork.com/business-valuation-with-aswath-damodarannov2023',
+          },
+          {
+            date: 'November 16-22, 2022',
+            title: 'Business Valuation With Aswath Damodaran',
+            location: 'California',
+            type: 'Workshop',
+            mode: 'Online',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1663836927.png',
+            link: '#',
+          },
+          {
+            date: 'January 13-21, 2022',
+            title: 'Business Valuation With Aswath Damodaran',
+            location: 'California',
+            type: 'Workshop',
+            mode: 'Online',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1663836615.png',
+            link: 'https://www.idealsnetwork.com/valuation-with-damodaran-13-14-jan-2022',
+          },
+          {
+            date: 'November 13-14, 2019',
+            title: 'Business Valuation with Aswath Damodaran',
+            location: 'Singapore',
+            type: 'Workshop',
+            mode: 'Offline Class',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1663836391.png',
+            link: 'https://idealsnetwork.com/bv-aswath-damodaran-13-14-nov-2019',
+          },
+          {
+            date: 'August 27-28, 2018',
+            title: 'Business Valuation with Aswath Damodaran',
+            location: 'Hong Kong',
+            type: 'Workshop',
+            mode: 'Offline Class',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1660802607.jpg',
+            link: 'https://idealsnetwork.com/business-valuation-aswath-damodaran-27-28-aug-hongkong',
+          },
+          {
+            date: 'May 25-26, 2017',
+            title: 'Business Valuation With Aswath Damodaran',
+            location: 'Singapore',
+            type: 'Workshop',
+            mode: 'Offline Class',
+            image: 'https://www.idealsnetwork.com/uploads/images/event/1659799012.jpg',
+            link: 'https://idealsnetwork.com/bv-aswath-damodaran-25-26-may-singapore',
+          },
+        ].map((event) => (
+          <div class="event-card" style="overflow: hidden; padding: 0;">
+            <div style="aspect-ratio: 16/9; overflow: hidden;">
+              <img 
+                src={event.image} 
+                alt={event.title}
+                style="width: 100%; height: 100%; object-fit: cover;"
+                loading="lazy"
+              />
+            </div>
+            <div style="padding: 1.5rem;">
+              <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.5rem;">
+                {event.date}
+              </div>
+              <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem; line-height: 1.3;">
+                {event.title}
+              </h3>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem;">
+                <span class="event-tag">{event.location}</span>
+                <span class="event-tag">{event.type}</span>
+                <span class="event-tag">{event.mode}</span>
+              </div>
+              <a 
+                href={event.link} 
+                class="btn-navy"
+                style="width: 100%; justify-content: center;"
+              >
+                Enquire Now
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Damodaran -->
+  <section style="padding: 5rem clamp(1rem, 4vw, 3rem); background: var(--white);">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="section-label">About The Trainer</span>
+        <span class="gold-rule-center" style="display: block; margin-top: 0.75rem;"></span>
+        <h2 class="section-title">Professor Aswath Damodaran</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start;">
+        <div>
+          <img 
+            src="https://www.idealsnetwork.com/bv-summit/assets/images/spk2.png" 
+            alt="Aswath Damodaran"
+            style="width: 100%; max-width: 280px; border-radius: 4px;"
+          />
+        </div>
+        <div>
+          <p style="color: var(--text-muted); line-height: 1.9; font-size: 1rem; margin-bottom: 1.25rem;">
+            Professor Aswath Damodaran is one of the most respected voices in corporate finance and business valuation. He teaches corporate finance and equity securities valuation at the Stern School of Business at New York University.
+          </p>
+          <p style="color: var(--text-muted); line-height: 1.9; font-size: 1rem; margin-bottom: 1.25rem;">
+            With decades of experience, Professor Damodaran has authored numerous books and is renowned for his practical approach to teaching complex valuation methodologies. His sessions with I-Deals Network have helped thousands of finance professionals master the art and science of business valuation.
+          </p>
+          <p style="color: var(--text-muted); line-height: 1.9; font-size: 1rem;">
+            Participants learn fundamental valuation techniques, relative valuation, discounted cash flow modeling, and strategic decision-making through case studies and real-world examples.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: var(--navy); padding: 5rem clamp(1rem, 4vw, 3rem); text-align: center; position: relative; z-index: 1;">
+    <div style="max-width: 560px; margin: 0 auto;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.75rem); font-weight: 600; color: #fff; margin-bottom: 1.25rem;">
+        Ready to Learn from the Best?
+      </h2>
+      <p style="color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.75; margin-bottom: 2rem;">
+        Register for our upcoming workshops or contact us to learn more about future events with Aswath Damodaran.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://www.idealsnetwork.com/register" class="btn-gold" target="_blank" rel="noopener noreferrer">Register Now</a>
+        <a href="/contact" class="btn-outline-gold">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  @media (max-width: 768px) {
+    section > div[style*="grid-template-columns: 1fr 2fr"] {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+    section > div[style*="grid-template-columns: 1fr 2fr"] > div:first-child {
+      text-align: center;
+    }
+    section > div[style*="grid-template-columns: 1fr 2fr"] > div:first-child img {
+      max-width: 200px !important;
+      margin: 0 auto;
+    }
+  }
+</style>
