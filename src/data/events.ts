@@ -54,7 +54,7 @@ export const popularEvents: { title: string; url: string }[] = [
   { title: 'Structuring & Negotiation of M&A and PE Deals', url: 'https://www.idealsnetwork.com/structuring-and-negotiation-of-M-&-A-and-PE-Deals' },
   { title: 'South East Asia Business Summit 2018', url: 'https://www.idealsnetwork.com/south-east-asia-business-summit-2018' },
   { title: 'Investment Deal Summit', url: 'https://www.idealsnetwork.com/investment-deal-summit' },
-  { title: 'Business Valuation Summit', url: 'https://www.idealsnetwork.com/business-valuation-summit' },
+  { title: 'Business Valuation Summit', url: '/business-valuation-summit' },
   { title: 'Business Valuation Masterclass', url: '/business-valuation-masterclass' },
 ];
 
